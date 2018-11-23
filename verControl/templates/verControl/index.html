@@ -1,8 +1,17 @@
-<html>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-    {% for d in deter %} {{ d }}{% endfor %}
-</body>
-</html>
+{% extends 'verControl/base.html'%}
+
+{% block content %}
+<h1>Carta de Controles</h1>
+
+  <p>Bienvenido a: <em>Carta de Controles</em>, una página para cargar y visualizar controles de Calidad.</p>
+
+<h2>Contenido:</h2>
+
+  <p>Actualmente la página tiene controles para las siguientes determinaciones:</p>
+    {% for d in deter %}
+        {{d}}
+    
+    {% endfor %}
+
+{% endblock %}
 

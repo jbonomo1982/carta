@@ -1,0 +1,15 @@
+{% extends 'verControl/base.html' %}
+
+{% block content %}
+<div class="corrida">
+    {% if corrida.fecha %}
+        <div class="date">
+            {{ corrida.fecha }}
+        </div>
+    {% endif %}
+    <h1>{{ corrida.pk }}</h1>
+    <p>{{ corrida.determinacion}}</p>
+    <p>{{ corrida.control}}</p>
+    <p>{{ corrida.valor}}</p>
+</div>
+{% endblock %}

@@ -72,7 +72,6 @@ class Corrida(models.Model):
     control= models.ForeignKey(Control,on_delete=models.CASCADE)
     valor = models.FloatField(help_text="El valor del control en la corrida")
     valido = models.BooleanField(default=True, help_text="si el valor puede ser tomado para calcular media y sd acumulado")
-    def __str__(self):
-        self.fecha.__str__()+self.determinacion
+    
     
 

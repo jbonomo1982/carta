@@ -1,0 +1,14 @@
+{% extends 'verControl/base.html' %}
+
+{% block content %}
+    {% for c in corrida %}
+        <div class="corrida">
+            <div class="date">
+                {{ c.fecha }}
+            </div>
+            <h1><a href="{% url 'corridaDetalle' pk=c.pk %}">{{ c }}</a></h1>
+            
+        </div>
+    {% endfor %}
+{% endblock %}
+
