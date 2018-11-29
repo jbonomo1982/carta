@@ -1,0 +1,19 @@
+{% extends 'verControl/base.html' %}
+
+{% block content %}
+<div class="control">
+    <h2>Seleccione el lote y la determinación de la carta que desea ver: </h2>
+
+    <h1>{{ control.nom }}</h1>
+    <p>LOTE: {{ control.lote}}</p>
+    <h2>Determinaciones controladas con {{control.nom}}: </h2>
+
+    {% for d in deter %}
+        <div class="determinacion">
+            <h1><a href="{% url 'grafico' det=d.pk co=control.pk %}">{{ d }}</a></h1>
+            
+        </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}

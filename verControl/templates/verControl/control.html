@@ -1,0 +1,11 @@
+{% extends 'verControl/base.html' %}
+
+{% block content %}
+    {% for c in controles %}
+        <div class="control">
+            <h2>Seleccione un control para ver la carta correspondiente: </h2>
+            <h1><a href="{% url 'controlDetalle' pk=c.pk %}">{{ c }}</a></h1>
+            
+        </div>
+    {% endfor %}
+{% endblock %}
