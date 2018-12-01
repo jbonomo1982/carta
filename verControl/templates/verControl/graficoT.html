@@ -1,18 +1,20 @@
 {% extends 'verControl/base.html' %}
 
-<head>
-    <title>Gráfico</title>
-   <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
-</head>
 {% block content %}
+<link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.css" type="text/css" />
+<link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.1.min.css" type="text/css" />
     <body>
         {{div3}}
         {{ div | safe }}
          <p>valores</p>
-         {{div2}}
+         {{div2| safe }}
     <!--hacer una lista con los valores y las fechas-->
     </body>
     <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.1.min.js"></script>
+    
+
         {{ script | safe }}
+        {{ script2 | safe }}
     
 {% endblock %}

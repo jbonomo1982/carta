@@ -24,7 +24,7 @@ class Control(models.Model):
     lote = models.ForeignKey(Lote,on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.nom + self.lote.__str__()
+        return self.nom +" Lote:" + self.lote.__str__()
     
 
 
@@ -68,6 +68,7 @@ class ValFabr(models.Model):
 
 class Corrida(models.Model):
     fecha = models.DateTimeField()
+    #Agregar usuario que sería el que está cargando la corrida.
     determinacion = models.ForeignKey(Determinacion, on_delete=models.CASCADE)
     control= models.ForeignKey(Control,on_delete=models.CASCADE)
     valor = models.FloatField(help_text="El valor del control en la corrida")
