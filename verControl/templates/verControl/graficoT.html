@@ -6,15 +6,23 @@
     <body>
         {{div3}}
         {{ div | safe }}
-         <p>valores</p>
-         {{div2| safe }}
-    <!--hacer una lista con los valores y las fechas-->
+        <div>
+                <p>valores</p>
+                {% for d in div2%}
+                    <p>{{d.0}} = {{d.1}}</p>
+                {%endfor%}
+                <p>Media Acumulada:</p>
+                {{div4}}
+                <p>Desvio Estándar:</p>
+                {{div5}}
+
+        </div>
+         
     </body>
     <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
     <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.1.min.js"></script>
     
 
         {{ script | safe }}
-        {{ script2 | safe }}
     
 {% endblock %}

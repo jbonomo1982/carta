@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 from bokeh.layouts import widgetbox
 from bokeh.models import ColumnDataSource
 from bokeh.models.widgets import DataTable, DateFormatter, TableColumn
+from django.template import RequestContext
 
 
 # Create your views here.
@@ -59,7 +60,17 @@ def graficoCorr(request, det, co):
         grupo.append(form)
 
     for i in range(len(grupo)): #puebla la lista
-        grupo[i] = grupo[i],y[i]
+        r = y[i][0]
+        grupo[i] = grupo[i],r
+
+
+    #Buscar la media acumulada de las corridas:
+    valArray = np.array(y)
+    div4 = np.mean(valArray)
+
+    #Buscar el desvio standard:
+
+    div5 = np.std(valArray)
     
     r =query.all().values_list('determinacion', flat=True)
     c= query.all().values_list('control', flat=True)
@@ -169,10 +180,9 @@ def graficoCorr(request, det, co):
     div2 = grupo
     div3 = det.nombre
 
-    #Feed them to the Django template.
-    return render_to_response( 'verControl/graficoT.html',
-            {'script' : script , 'div' : div, 'div3': div3,
-            'div2': div2} )
+
+    return render(request,'verControl/graficoT.html',{'script':script,'div':div, 'div2':div2,
+     'div3':div3,'div4':div4, 'div5':div5})
 
 
 
