@@ -1,7 +1,7 @@
 # carta
 Página Web en Django para guardar y visualizar valores de controles de calidad
 
-l objetivo de esta página web es:
+El objetivo de esta página web es:
 Guardar valores de controles de calidad para ciertas determinaciones,
  para luego verlos en un grafico de dos ejes (estilo Levey-Jennings 
 https://es.wikipedia.org/wiki/Gr%C3%A1fica_de_Levey-Jennings ).
